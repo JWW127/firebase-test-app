@@ -22,10 +22,22 @@ code {
     monospace;
 }
 
+div {
+    margin-bottom: 5px; 
+}
+
+button {
+    margin: 5px;
+}
+
 .p1 {
     padding: 24px;
 }
 
 .smf {
     font-size: xx-small;
+}
+
+p {
+    color: var(--dark-magenta);
 }

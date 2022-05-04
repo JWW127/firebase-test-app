@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
-import { getDatabase, ref, onValue } from 'firebase/database'
+import { getDatabase, ref, onValue, update } from 'firebase/database'
+import { FormCheck } from 'react-bootstrap'
 
 //get firebase configs
 import firebaseApp from '../firebase'
-
 import { Todo } from '../types'
 
 const TodoList = () => {
     const db = getDatabase(firebaseApp)
-
     const [todoList, setTodoList] = useState<Todo[]>([])
 
     useEffect(() => {
@@ -25,12 +24,21 @@ const TodoList = () => {
         })
     },[db])
 
+    const changeTodoCompletion = (todo: Todo) => {
+    const todoRef = ref(db, `/todos/${todo.id}`)
+    update(todoRef, {done: !todo.done})
+    }
+
     return (
         <div>
         <h1>Todo List </h1>
             <p className="smf">Powered by Firebase</p>
             {todoList.map((todo, index) => {
-            return <p key={index}>{todo.title}</p>
+                return <FormCheck 
+                    key={index} 
+                    checked={todo.done} 
+                    onChange={() => changeTodoCompletion(todo)} 
+                    label={todo.title}/>
             })}
             </div>
     )
