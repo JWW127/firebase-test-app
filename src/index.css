@@ -1,4 +1,14 @@
+:root {
+/* Color Theme Swatches in Hex */
+    --mustard: #C2B634;
+    --teal: #045266;
+    --spicy-mustard: #66612A;
+    --dark-magenta: #66112E;
+    --dark-gray: #393637;
+}
 body {
+    background-color: var(--dark-gray);
+    color: var(--mustard);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +20,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.p1 {
+    padding: 24px;
+}
+
+.smf {
+    font-size: xx-small;
 }
