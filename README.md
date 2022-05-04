@@ -1,4 +1,4 @@
-#Firebase Test App
+# Firebase Test App
 ##What is this app for?
 This app is to help get familiar with Firebase.
 ##What is Firebase?
